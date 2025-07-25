@@ -4,13 +4,13 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = "postgresql://postgres.frceqlaaasgyrmzmyuos:loadtest2531@aws-0-ca-central-1.pooler.supabase.com:5432/postgres"
+  url      = env("DATABASE_URL")
 }
 
 model Users {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  name      String
-  createdAt DateTime @default(now())
-}
+  id    Int     @id @default(autoincrement())
+  name  String?
+  email String?
 
+  @@map("users")
+}
