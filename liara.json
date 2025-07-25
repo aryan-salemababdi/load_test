@@ -1,6 +1,8 @@
 {
 "app":"dev-pulse",
 "port":4000,
+  "platform": "node",
+  "startCommand": "npm start",
 "build":{
 "location":"iran"
 },
