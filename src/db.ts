@@ -13,7 +13,7 @@ export const sequelize = new Sequelize(
     dialect: "postgres",
     logging: false,
     pool: {
-      max: 1000,       
+      max: 20,       
       min: 5,         
       acquire: 30000,
       idle: 10000     
