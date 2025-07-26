@@ -1,4 +1,16 @@
-import { PrismaClient } from "@prisma/client";
+import { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
 
-const prisma = new PrismaClient();
-export default prisma; 
+dotenv.config();
+
+export const sequelize = new Sequelize(
+  process.env.DB_NAME!,
+  process.env.DB_USER!,
+  process.env.DB_PASSWORD!,
+  {
+    host: process.env.DB_HOST,
+    port: Number(process.env.DB_PORT),
+    dialect: process.env.DB_DIALECT as any,
+    logging: false,
+  }
+);

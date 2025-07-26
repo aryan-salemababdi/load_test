@@ -1,9 +1,10 @@
-import prisma from "../db";
+import { User } from "../models/User";
+
 
 export const createUser = async (data: { name: string; email: string }) => {
-  return await prisma.users.create({ data });
+  return await User.create(data);
 };
 
 export const getAllUsers = async () => {
-  return await prisma.users.findMany();
+  return await User.findAll();
 };
