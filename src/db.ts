@@ -12,5 +12,11 @@ export const sequelize = new Sequelize(
     port: Number(process.env.DB_PORT),
     dialect: "postgres",
     logging: false,
+    pool: {
+      max: 1000,       
+      min: 5,         
+      acquire: 30000,
+      idle: 10000     
+    }
   }
 );
